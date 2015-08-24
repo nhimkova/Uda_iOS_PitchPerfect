@@ -43,14 +43,20 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             },
             completion: nil
         )
+
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn,
             animations: {
                 self.recordInProgress.alpha = 1.0
+                //not sure why but I have to set this to make it work
+                self.recordInProgress.hidden = false
             },
             completion: nil
         )
+        println(recordInProgress.alpha)
+        println(recordInProgress.hidden)
         recordButton.enabled = false
         stopButton.hidden = false
+
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         let recordingName = "my_audio.wav"
