@@ -61,8 +61,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue == "stopRecording") {
-            
+        if (segue.identifier == "stopRecording") {
+            let playSoundsVC: PlaySoundsViewController = segue.destinationViewController as PlaySoundsViewController
+            let data = sender as RecordedAudio
+            playSoundsVC.receivedAudio = data
         }
     }
     
@@ -81,8 +83,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopButton(sender: UIButton) {
         recordInProgress.hidden = true
-        
-        //TODO: Stop recording
+        audioRecorder.stop()
+        var session = AVAudioSession.sharedInstance()
+        session.setActive(false, error: nil)
     }
 }
 
