@@ -27,10 +27,10 @@
                                     <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Duj-BD-Zal"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5F-3n-96H">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5F-3n-96H">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
-                                <color key="textColor" red="0.22338017683915198" green="0.24990155953347937" blue="0.64932528409090917" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZP-Cp-Ny5">
@@ -42,6 +42,12 @@
                                     <action selector="stopButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hpI-4f-KRi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTZ-Lv-YYl">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" red="0.2233801768" green="0.24990155950000001" blue="0.64932528410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.45101313464035114" green="0.84753787878787878" blue="0.5564746228464641" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -49,22 +55,27 @@
                             <constraint firstAttribute="centerX" secondItem="i5F-3n-96H" secondAttribute="centerX" id="EMh-vi-NF2"/>
                             <constraint firstAttribute="centerX" secondItem="Ybm-po-y5J" secondAttribute="centerX" id="MlM-7x-FRZ"/>
                             <constraint firstItem="i5F-3n-96H" firstAttribute="top" secondItem="Ybm-po-y5J" secondAttribute="bottom" constant="16" id="Phk-Pl-P8X"/>
+                            <constraint firstItem="QTZ-Lv-YYl" firstAttribute="top" secondItem="Ybm-po-y5J" secondAttribute="bottom" constant="17" id="QM3-UO-mlq"/>
                             <constraint firstAttribute="centerX" secondItem="gZP-Cp-Ny5" secondAttribute="centerX" id="SDr-IU-IFU"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gZP-Cp-Ny5" secondAttribute="bottom" constant="85" id="ZhF-32-UMq"/>
+                            <constraint firstAttribute="centerX" secondItem="QTZ-Lv-YYl" secondAttribute="centerX" constant="-1" id="dWL-hF-E4J"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Ybm-po-y5J"/>
                                 <exclude reference="i5F-3n-96H"/>
                                 <exclude reference="gZP-Cp-Ny5"/>
+                                <exclude reference="QTZ-Lv-YYl"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ZhF-32-UMq"/>
-                                <exclude reference="EMh-vi-NF2"/>
-                                <exclude reference="Phk-Pl-P8X"/>
                                 <exclude reference="4hj-po-dI2"/>
                                 <exclude reference="MlM-7x-FRZ"/>
+                                <exclude reference="QM3-UO-mlq"/>
+                                <exclude reference="dWL-hF-E4J"/>
+                                <exclude reference="EMh-vi-NF2"/>
+                                <exclude reference="Phk-Pl-P8X"/>
                                 <exclude reference="SDr-IU-IFU"/>
+                                <exclude reference="ZhF-32-UMq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -72,14 +83,17 @@
                                 <include reference="Ybm-po-y5J"/>
                                 <include reference="i5F-3n-96H"/>
                                 <include reference="gZP-Cp-Ny5"/>
+                                <include reference="QTZ-Lv-YYl"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ZhF-32-UMq"/>
-                                <include reference="EMh-vi-NF2"/>
-                                <include reference="Phk-Pl-P8X"/>
                                 <include reference="4hj-po-dI2"/>
                                 <include reference="MlM-7x-FRZ"/>
+                                <include reference="QM3-UO-mlq"/>
+                                <include reference="dWL-hF-E4J"/>
+                                <include reference="EMh-vi-NF2"/>
+                                <include reference="Phk-Pl-P8X"/>
                                 <include reference="SDr-IU-IFU"/>
+                                <include reference="ZhF-32-UMq"/>
                             </mask>
                         </variation>
                     </view>
@@ -88,6 +102,7 @@
                         <outlet property="recordButton" destination="Ybm-po-y5J" id="ZhW-8b-8E8"/>
                         <outlet property="recordInProgress" destination="i5F-3n-96H" id="czd-xt-jL5"/>
                         <outlet property="stopButton" destination="gZP-Cp-Ny5" id="fAm-NU-Kap"/>
+                        <outlet property="tapToRecord" destination="QTZ-Lv-YYl" id="g69-nA-l0b"/>
                         <segue destination="yCM-1X-hcU" kind="show" identifier="stopRecording" id="XEH-Bk-2K5"/>
                     </connections>
                 </viewController>

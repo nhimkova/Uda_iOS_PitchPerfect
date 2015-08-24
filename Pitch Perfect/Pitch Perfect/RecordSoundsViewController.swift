@@ -14,14 +14,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordInProgress: UILabel!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var tapToRecord: UILabel!
     
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,21 +30,29 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.recordInProgress.alpha = 0.0
+        self.tapToRecord.alpha = 1.0
         stopButton.hidden = true
         recordButton.enabled = true
     }
 
     @IBAction func recordAudio(sender: UIButton) {
-        stopButton.hidden = false
-        recordInProgress.hidden = false
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut,
+            animations: {
+                self.tapToRecord.alpha = 0.0
+            },
+            completion: nil
+        )
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn,
+            animations: {
+                self.recordInProgress.alpha = 1.0
+            },
+            completion: nil
+        )
         recordButton.enabled = false
+        stopButton.hidden = false
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        
-        //let currentDateTime = NSDate()
-        //let formatter = NSDateFormatter()
-        //formatter.dateFormat = "ddMMyyyy-HHmmss"
-        //let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
         let recordingName = "my_audio.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
@@ -70,9 +78,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
         if (flag) {
-            recordedAudio = RecordedAudio()
-            recordedAudio.filePathURL = recorder.url
-            recordedAudio.title = recorder.url.lastPathComponent
+            recordedAudio = RecordedAudio(path: recorder.url, title: recorder.url.lastPathComponent)
+//            recordedAudio.filePathURL = recorder.url
+//            recordedAudio.title = recorder.url.lastPathComponent
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         } else {
             println("Recording was not successful")
