@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pitch Perfect/RecordSoundsViewController.swift"
-            timestampString = "462131111.453537"
+            timestampString = "462143203.144868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pitch Perfect/RecordSoundsViewController.swift"
-            timestampString = "462131111.453537"
+            timestampString = "462143203.144868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -88,6 +88,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Pitch_Perfect.RecordSoundsViewController.(recordAudio (Pitch_Perfect.RecordSoundsViewController) -&gt; (ObjectiveC.UIButton) -&gt; ()).(closure #1)"
                   moduleName = "Pitch Perfect"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nhim0406/Documents/Programming/Udacity/IOSNano/Apps/Pitch%20Perfect/Pitch%20Perfect/RecordSoundsViewController.swift"
                   timestampString = "462123750.409552"
                   startingColumnNumber = "9223372036854775807"
@@ -102,6 +103,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "reabstraction thunk helper from @callee_owned () -&gt; (@unowned ()) to @callee_unowned @objc_block () -&gt; (@unowned ())"
                   moduleName = "Pitch Perfect"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nhim0406/Documents/Programming/Udacity/IOSNano/Apps/Pitch%20Perfect/Pitch%20Perfect/RecordSoundsViewController.swift"
                   timestampString = "462123750.409735"
                   startingColumnNumber = "9223372036854775807"
@@ -111,22 +113,6 @@
                   offsetFromSymbolStart = "9">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pitch Perfect/RecordSoundsViewController.swift"
-            timestampString = "462131111.453537"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "recordAudio(_:)"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -150,6 +136,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Pitch_Perfect.RecordSoundsViewController.recordAudio (Pitch_Perfect.RecordSoundsViewController)(ObjectiveC.UIButton) -&gt; ()"
                   moduleName = "Pitch Perfect"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nhim0406/Documents/Programming/Udacity/IOSNano/Apps/Pitch%20Perfect/Pitch%20Perfect/RecordSoundsViewController.swift"
                   timestampString = "462124989.701415"
                   startingColumnNumber = "9223372036854775807"
@@ -164,6 +151,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Pitch_Perfect.RecordSoundsViewController.(recordAudio (Pitch_Perfect.RecordSoundsViewController) -&gt; (ObjectiveC.UIButton) -&gt; ()).(closure #1)"
                   moduleName = "Pitch Perfect"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nhim0406/Documents/Programming/Udacity/IOSNano/Apps/Pitch%20Perfect/Pitch%20Perfect/RecordSoundsViewController.swift"
                   timestampString = "462124989.701777"
                   startingColumnNumber = "9223372036854775807"
@@ -178,6 +166,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "reabstraction thunk helper from @callee_owned () -&gt; (@unowned ()) to @callee_unowned @objc_block () -&gt; (@unowned ())"
                   moduleName = "Pitch Perfect"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nhim0406/Documents/Programming/Udacity/IOSNano/Apps/Pitch%20Perfect/Pitch%20Perfect/RecordSoundsViewController.swift"
                   timestampString = "462124989.702082"
                   startingColumnNumber = "9223372036854775807"
@@ -192,6 +181,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Pitch_Perfect.RecordSoundsViewController.(recordAudio (Pitch_Perfect.RecordSoundsViewController) -&gt; (ObjectiveC.UIButton) -&gt; ()).(closure #2)"
                   moduleName = "Pitch Perfect"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nhim0406/Documents/Programming/Udacity/IOSNano/Apps/Pitch%20Perfect/Pitch%20Perfect/RecordSoundsViewController.swift"
                   timestampString = "462124989.70248"
                   startingColumnNumber = "9223372036854775807"
@@ -206,6 +196,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "reabstraction thunk helper from @callee_owned (@unowned Swift.Bool) -&gt; (@unowned ()) to @callee_owned (@in Swift.Bool) -&gt; (@out ())"
                   moduleName = "Pitch Perfect"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nhim0406/Documents/Programming/Udacity/IOSNano/Apps/Pitch%20Perfect/Pitch%20Perfect/RecordSoundsViewController.swift"
                   timestampString = "462124989.702857"
                   startingColumnNumber = "9223372036854775807"
