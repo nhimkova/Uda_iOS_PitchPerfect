@@ -11,26 +11,16 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
 
-    var myPlayer: AVAudioPlayer!
     var receivedAudio: RecordedAudio!
+    var audioEngine: AVAudioEngine!
+    var audioFile: AVAudioFile!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let url = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3")!)
-//        var error: NSError?
+        audioEngine = AVAudioEngine()
+        audioFile = AVAudioFile(forReading: receivedAudio.filePathURL, error: nil)
         
-        myPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathURL, error: nil)
-        myPlayer.enableRate = true
-        myPlayer.delegate = self
-        myPlayer.prepareToPlay()
-        
-//        if let err = error {
-//            println("audioPlayer error \(err.localizedDescription)")
-//        } else {
-//            myPlayer?.delegate = self
-//            myPlayer?.prepareToPlay()
-//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,23 +28,46 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func PlaySlowSound(sender: UIButton) {
-            myPlayer.stop()
-            myPlayer.rate = 0.7
-            myPlayer.currentTime = 0.0
-            myPlayer.play()
+        playAudioWithCustomPitchAndRate(1, rate: 0.2)
     }
     
     @IBAction func PlayFastSound(sender: UIButton) {
-            myPlayer.stop()
-            myPlayer.rate = 1.5
-            myPlayer.currentTime = 0.0
-            myPlayer.play()
+        playAudioWithCustomPitchAndRate(1, rate: 1.8)
     }
     
+    @IBAction func playChipmunkSound(sender: UIButton) {
+        playAudioWithCustomPitchAndRate(1000, rate: 1)
+    }
+    
+    @IBAction func playDarthVaderSound(sender: UIButton) {
+        playAudioWithCustomPitchAndRate(-1000, rate: 1)
+    }
+    
+    func playAudioWithCustomPitchAndRate(pitch: Float, rate: Float) {
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var changePitchEffect = AVAudioUnitTimePitch()
+        changePitchEffect.pitch = pitch
+        changePitchEffect.rate = rate
+        audioEngine.attachNode(changePitchEffect)
+        
+        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
+        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()
+    }
+
     @IBAction func stopAudio(sender: UIButton) {
-            myPlayer.stop()
+            audioEngine.stop()
+            audioEngine.reset()
     }
     
 }
